@@ -1,0 +1,19 @@
+<div id="container-principal">
+  <p *ngIf="users" class="data">{{users.userName.charAt(0).toUpperCase() + users.userName.slice(1)}}</p>
+  <p class="data">{{users.typeUser.charAt(0).toUpperCase() + users.typeUser.slice(1)}}</p>
+  <div id="contador">
+    <p *ngIf="users.conversionCounter > 0">{{ users.conversionCounter }}</p>
+    <img *ngIf="users.conversionCounter <= 0" src="../../../assets/img/cryptocurrency_2268248.png" alt="Imagen">
+  </div>
+
+
+  <img class="img-editanddelete" (click)="modalEditar.showModal() "
+    src="https://cdn-icons-png.flaticon.com/128/2064/2064597.png?ga=GA1.1.1567254405.1695211600&track=ais" alt="">
+
+  <img class="img-editanddelete" (click)="BorrarContacto()"
+    src="https://cdn-icons-png.flaticon.com/128/7695/7695651.png?ga=GA1.1.1567254405.1695211600&track=ais" alt="">
+
+  <dialog method="modal" #modalEditar>
+    <app-nuevo-usuario (cerrar)="modalEditar.close()" [users]="users"></app-nuevo-usuario>
+  </dialog>
+</div>

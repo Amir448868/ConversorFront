@@ -1,0 +1,20 @@
+<div>
+
+
+  <p>{{coins.name.charAt(0).toUpperCase() +coins.name.slice(1)}}</p>
+  <p>{{coins.symbol.toUpperCase()}}</p>
+  <p>{{coins.value}}</p>
+
+
+  <img (click)="modalEditar.showModal()"
+    src="https://cdn-icons-png.flaticon.com/128/2064/2064597.png?ga=GA1.1.1567254405.1695211600&track=ais" alt="">
+
+
+  <img (click)="BorrarMoneda()"
+    src="https://cdn-icons-png.flaticon.com/128/7695/7695651.png?ga=GA1.1.1567254405.1695211600&track=ais" alt="">
+
+
+  <dialog method="modal" #modalEditar>
+    <app-editarcoins (cerrar)="modalEditar.close()" [coins]="coins"></app-editarcoins>
+  </dialog>
+</div>

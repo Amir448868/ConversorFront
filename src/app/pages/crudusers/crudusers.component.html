@@ -1,0 +1,17 @@
+<div class="card-container">
+  <div id="imgs-container">
+
+    <img [routerLink]="'/adminhome'"
+      src="https://cdn-icons-png.flaticon.com/128/2879/2879564.png?ga=GA1.1.1567254405.1695211600&track=ais" alt="">
+
+    <img (click)="modalCrear.showModal()" src="../../../assets/img/user_9794707.png" alt="">
+  </div>
+  <h2>Usuarios</h2>
+  <ng-container *ngFor="let user of users; let i = index">
+    <app-users [users]="user"></app-users>
+  </ng-container>
+
+  <dialog method="modal" #modalCrear>
+    <app-crearusuario (cerrar)="modalCrear.close()"></app-crearusuario>
+  </dialog>
+</div>

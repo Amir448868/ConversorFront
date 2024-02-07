@@ -1,0 +1,21 @@
+<img [routerLink]="'/convertir'"
+  src="https://cdn-icons-png.flaticon.com/128/2879/2879564.png?ga=GA1.1.1567254405.1695211600&track=ais" alt="">
+<div class="container">
+
+
+  <h1>Suscripciones</h1>
+  <p>La suscripción de {{user.userName}} es {{user.typeUser.toUpperCase()}}</p>
+
+  <div class="box">
+    <p class="texto">Con la suscripción FREE podrás realizar 10 conversiones</p>
+    <button type="button" (click)="editarUsuario('free')" [routerLink]="'/convertir'">Obtener Free</button>
+  </div>
+  <div class="box">
+    <p class="texto">Con la suscripción TRIAL podrás realizar 100 conversiones</p>
+    <button type="button" (click)="editarUsuario('trial')" [routerLink]="'/convertir'">Obtener Trial</button>
+  </div>
+  <div class="box">
+    <p class="texto">Con la suscripción PREMIUM no tienes límite de conversiones</p>
+    <button type="button" (click)="editarUsuario('premium')" [routerLink]="'/convertir'">Obtener Premium</button>
+  </div>
+</div>

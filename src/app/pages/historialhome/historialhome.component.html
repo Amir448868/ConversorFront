@@ -1,0 +1,45 @@
+<img [routerLink]="'/convertir'"
+  src="https://cdn-icons-png.flaticon.com/128/2879/2879564.png?ga=GA1.1.1567254405.1695211600&track=ais" alt="">
+<h1>Historial</h1>
+
+
+
+
+
+
+
+<div class="conversion-item-container" *ngIf="conversions && conversions.length > 0; else sinConversiones">
+  <div class="conversion-item">
+    <div>
+      <p>conversionId</p>
+    </div>
+    <div>
+      <p>Moneda de origen</p>
+    </div>
+    <div>
+      <p>Moneda de destino</p>
+    </div>
+    <div>
+      <p> Fecha</p>
+    </div>
+    <div>
+      <p>Monto</p>
+    </div>
+    <div>
+      <p>Resultado</p>
+    </div>
+  </div>
+</div>
+
+
+
+
+<ng-container *ngFor="let conversion of conversions; let i = index">
+  <app-historial [conversions]="conversion"></app-historial>
+</ng-container>
+
+<ng-template #sinConversiones>
+  <p id="sinconv">
+    No hay conversiones
+  </p>
+</ng-template>

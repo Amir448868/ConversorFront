@@ -1,0 +1,19 @@
+<div>
+  <div id="imgs-container">
+    <img [routerLink]="'/adminhome'"
+      src="https://cdn-icons-png.flaticon.com/128/2879/2879564.png?ga=GA1.1.1567254405.1695211600&track=ais" alt="">
+
+    <img (click)="modalCrearCoin.showModal()"
+      src="https://cdn-icons-png.flaticon.com/128/1393/1393850.png?ga=GA1.1.1567254405.1695211600&track=ais" alt="">
+  </div>
+
+  <h2>Monedas</h2>
+
+  <ng-container *ngFor="let coin of coins; let i = index">
+    <app-coins [coins]="coin"></app-coins>
+  </ng-container>
+
+  <dialog method="modal" #modalCrearCoin>
+    <app-crearcoins (cerrar)="modalCrearCoin.close()"></app-crearcoins>
+  </dialog>
+</div>
